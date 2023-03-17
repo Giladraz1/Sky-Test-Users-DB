@@ -1,0 +1,69 @@
+<body dir="rtl">
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h2 class="h1">משתמשי TEST/QA - SKY</h2>
+  </div>
+
+    <input 
+    [(ngModel)]="filterQuery" (ngModelChange)="filterData()"
+    class="form-control mr-sm-2 w-25 mt-5 mb-3" type="search" id="myInput" placeholder="חפש לפי תכולה" title="Type in a name" >
+
+
+  <div class="table-responsive">
+    <table id="myTable" matSort (matSortChange)="sortData($event)" class="table table-hover">
+      <thead class="thead-light">
+        <tr >
+          <th scope="col" class="d-none">Id</th>
+          <th mat-sort-header="account" scope="col">חשבון</th>
+          <th mat-sort-header="username" scope="col">שם משתמש</th>
+          <th mat-sort-header="testEnvironment" scope="col">סביבה</th>
+          <th mat-sort-header="description" scope="col">תיאור</th>
+          <th class="text-center" scope="col">פעולה</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tehula of filteredTehulot; let i = index;">
+          <th class="d-none" scope="row">{{ tehula._id }}</th>
+          <td>{{ tehula.account }}</td>
+          <td>{{ tehula.username }}</td>
+           <td>{{ tehula.testEnvironment }}</td>
+          <td>{{ tehula.description }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary mx-1"
+              routerLink="/edit-tehula/{{ tehula._id }}"
+            >
+              ערוך
+            </button>
+            <button class="btn btn-sm btn-danger mx-1" (click)="delete(tehula._id, i)">
+              מחק
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</body>

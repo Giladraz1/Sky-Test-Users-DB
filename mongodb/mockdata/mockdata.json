@@ -1,0 +1,45 @@
+[
+  {
+    "account": "455-423310",
+    "username": "0124482102",
+    "testEnvironment": "QA",
+    "description": "העברת מטח לבנק אחר"
+  },
+    {
+    "account": "455-423310",
+    "username": "0124482102",
+    "testEnvironment": "QA",
+    "description": "העברה לחשבון אחר"
+  },
+      {
+    "account": "455-423310",
+    "username": "0124482102",
+    "testEnvironment": "QA",
+    "description": "העברה מטח בתוך הבנק"
+  },
+        {
+    "account": "455-105248",
+    "username": "0016392730",
+    "testEnvironment": "TEST",
+    "description": "שוק ההון"
+  }
+  ,
+      {
+    "account": "401-081545",
+    "username": "0124482102",
+    "testEnvironment": "QA",
+    "description": "ערבויות בנקאיות  מטי"
+  }  ,
+      {
+    "account": "401-081545",
+    "username": "8211715481",
+    "testEnvironment": "QA",
+    "description": "מזכירה עם מורשי חתימה QA 4210499842, 421237509"
+  }, 
+  {
+    "account": "חשבון ראשי",
+    "username": "5415244738",
+    "testEnvironment": "TEST",
+    "description": "הצגת יתרות ומסגרות שונים"
+  } 
+]
